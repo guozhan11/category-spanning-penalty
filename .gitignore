@@ -1,0 +1,6 @@
+# --- Large Data Files ---
+# Ignore massive files in the data folder
+0_data/*.csv
+0_data/*.gz
+0_data/*.jsonl
+0_data/*.tsv
