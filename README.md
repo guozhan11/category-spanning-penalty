@@ -4,6 +4,28 @@
 
 This repository contains a machine learning pipeline for studying category spanning behavior in the creator economy and its association with engagement outcomes.
 
+## Background
+
+This project is motivated by the categorical imperative and illegitimacy discount in organizational sociology: actors that do not fit cleanly into recognized categories are often harder for audiences and intermediaries to evaluate and may be penalized. In traditional markets, this pattern has been documented for category-spanning firms and cultural products.
+
+The creator economy introduces a different setting. On platforms like YouTube, creators are evaluated by both social audiences (viewers/subscribers) and algorithmic recommenders (ranking and distribution systems). This creates a strategic tension: creators are often encouraged to maintain a consistent niche identity, but may also benefit from exploring adjacent or new categories.
+
+## Research Focus
+
+The core question is whether category spanning is associated with video underperformance relative to a creator's own recent baseline, that is, whether cross-category movement looks more like drifting (penalty) or pivoting (adaptation).
+
+Following the Stage 2 design, the empirical setup uses:
+
+- Unit of analysis: individual video upload
+- Target: `underperform_flag` (1 if a video's log-engagement falls below the channel's rolling historical baseline; 0 otherwise)
+- Key explanatory behavior: `category_switch`, defined with a stricter rule where the current category differs from the previous category after a stable prior run
+
+This framing treats the project as a time-aware supervised classification problem rather than a static cross-sectional correlation.
+
+## Data Context
+
+The analysis is built on the YouNiverse dataset (Ribeiro and West, 2021), using English-language YouTube video and channel metadata in longitudinal format. The staged pipeline constructs cleaned and feature-engineered datasets from large raw JSONL/TSV sources into panel-ready and ML-ready tables for modeling.
+
 ## Project Layout
 
 ```text
